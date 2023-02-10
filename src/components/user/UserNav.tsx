@@ -6,11 +6,11 @@ const UserNav: React.FC = () => {
     "p-4 text-gray-500 font-semibold block transition-colors";
   const activeClass = "p-4 text-blue-700 font-semibold block transition-colors";
   return (
-    <div className="shadow bg-white rounded-md mt-7">
+    <div className="shadow bg-white rounded-md mt-7 w-60">
       <ul>
         <li>
           <NavLink
-            to={""}
+            to={"./"}
             end
             className={({ isActive }) =>
               isActive ? activeClass : defaultClass
@@ -21,7 +21,7 @@ const UserNav: React.FC = () => {
         </li>
         <li>
           <NavLink
-            to={""}
+            to={"./albums"}
             className={({ isActive }) =>
               isActive ? activeClass : defaultClass
             }
@@ -31,7 +31,7 @@ const UserNav: React.FC = () => {
         </li>
         <li>
           <NavLink
-            to={""}
+            to={"./todos"}
             className={({ isActive }) =>
               isActive ? activeClass : defaultClass
             }
