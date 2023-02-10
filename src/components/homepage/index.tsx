@@ -1,3 +1,4 @@
+import "./style.css"
 import { useEffect, useState } from "react";
 import { IUser } from "../../interfaces/IUser";
 import UserCard from "./UserCard";
@@ -11,7 +12,7 @@ const HomePage: React.FC = () => {
   }, []);
   return (
     //make it look same as Homepage.png
-    <div className=" p-5 pt-32">
+    <div className="user-cards p-5 pt-32">
       {users.map((el) => (
         <UserCard key={el.id} {...el} />
       ))}
