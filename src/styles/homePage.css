@@ -1,0 +1,40 @@
+.homepage{
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    gap: 20px;
+    margin:0 100px ;
+}
+
+.usercard{
+    background-color: white;
+    height: 150px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.usercard:hover{
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+
+.user-details{
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50vw;
+    display: grid;
+    grid-template-columns: 50% 50% ;
+    color: grey;
+    font-weight: 500;
+}
+
+.user-details span{
+    color: black;
+}
+
+.user-todos{
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    width: 50vw;
+}

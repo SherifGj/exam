@@ -7,6 +7,13 @@ const Photos: React.FC = () => {
   const goBack = () => {
     navigate(-1);
   };
+  // const [photos, setPhotos] = useState<IPhotos[]>([] as IPhotos[]);
+  // useEffect(() => {
+  //     fetch(`${process.env.REACT_APP_API}/photos/?albumId=${id}`)
+  //     .then((res) => res.json())
+  //     .then((data) => setPhotos(data));
+  // }, []);
+  // console.log(id);
 
   return (
     <>
