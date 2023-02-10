@@ -2,11 +2,20 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { IPhotos } from "../../interfaces/IPhoto";
 
-const Photos: React.FC = () => {
+const Photos: React.FC<IPhotos> = () => {
   const navigate = useNavigate();
   const goBack = () => {
     navigate(-1);
   };
+
+  const [photo, setPhoto] = useState<IPhotos>();
+  const { id } = useParams();
+
+  useEffect(() => {
+    fetch(`${process.env.REACT_APP_API}/photos/${id}`)
+      .then((res) => res.json())
+      .then((data) => setPhoto(data));
+  }, [id]);
 
   return (
     <>
@@ -16,7 +25,7 @@ const Photos: React.FC = () => {
       >
         Back
       </button>
-      <div className="grid grid-cols-3 gap-3">{/* photos are missing? */}</div>
+      <div className="grid grid-cols-3 gap-3">{}</div>
     </>
   );
 };
