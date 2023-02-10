@@ -4,6 +4,8 @@ import { IPhotos } from "../../interfaces/IPhoto";
 
 const Photos: React.FC = () => {
   const navigate = useNavigate();
+  const [photo, setPhotos] = useState<IPhotos>({} as IPhotos);
+
   const goBack = () => {
     navigate(-1);
   };
@@ -16,7 +18,9 @@ const Photos: React.FC = () => {
       >
         Back
       </button>
-      <div className="grid grid-cols-3 gap-3">{/* photos are missing? */}</div>
+      <div className="grid grid-cols-3 gap-3">
+        <img src={photo.thumbnailUrl} alt="Image" />
+      </div>
     </>
   );
 };
