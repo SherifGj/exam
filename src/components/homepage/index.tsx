@@ -11,7 +11,7 @@ const HomePage: React.FC = () => {
   }, []);
   return (
     //make it look same as Homepage.png
-    <div className=" p-5 pt-32">
+    <div className="flex flex-wrap justify-center gap-5 p-5 pt-32">
       {users.map((el) => (
         <UserCard key={el.id} {...el} />
       ))}
