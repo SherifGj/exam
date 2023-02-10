@@ -1,18 +1,17 @@
-import { Link } from "react-router-dom";
-import { IUser } from "../../interfaces/IUser";
+import { Link } from 'react-router-dom';
 
-const UserCard: React.FC<IUser> = ({ name, username, id }) => {
-  return (
-    //this card needs some styling... don't you think?
-    <Link to={`/user/${id}`}>
-      <div className="border mb-2">
-        <p className="font-bold group-hover:text-blue-500">{username}</p>
-        <p className="text-gray-600 font-light  group-hover:text-blue-500">
-          {name}
-        </p>
-      </div>
-    </Link>
-  );
-};
-
-export default UserCard;
+export default function UserCard({ name, username, id }: { name: string; username: string; id: number }) {
+	return (
+		<Link
+			to={`/user/${id}`}
+			className="group col-span-1 h-32 max-h-32 rounded-lg border bg-white p-4 shadow-lg transition-all duration-500 ease-in-out hover:bg-blue-300 hover:bg-opacity-30"
+		>
+			<div className="mb-2">
+				<p className="font-bold transition-all duration-500 ease-in-out group-hover:text-blue-500">{username}</p>
+				<p className="font-light text-gray-600  transition-all duration-500 ease-in-out group-hover:text-blue-500">
+					{name}
+				</p>
+			</div>
+		</Link>
+	);
+}

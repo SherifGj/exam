@@ -1,18 +1,21 @@
-import { useState } from "react";
-import { ITodo } from "../../../interfaces/ITodo";
+import { useState } from 'react';
+import { ITodo } from '../../../interfaces/ITodo';
 
-const Item: React.FC<ITodo> = ({ completed, title }) => {
-  //Use onChange to mark your to-dos as done.
-  return (
-    <li className="py-2  border-b">
-      <div className={`flex align-middle flex-row justify-between`}>
-        <p className={` text-lg text-black`}>{title}</p>
-        <div className="p-2">
-          <input type="checkbox" value="true" />
-        </div>
-      </div>
-    </li>
-  );
-};
-
-export default Item;
+export default function Item({ item }: { item: ITodo }) {
+	const [checked, setChecked] = useState<boolean>(item.completed);
+	return (
+		<li className="border-b  py-2">
+			<div className="flex flex-row justify-between align-middle">
+				<p className={`${checked ? 'text-green-500 line-through ' : ''}text-lg text-black`}>{item.title}</p>
+				<div className="p-2">
+					<input
+						type="checkbox"
+						value="true"
+						checked={checked}
+						onChange={() => setChecked(!checked)}
+					/>
+				</div>
+			</div>
+		</li>
+	);
+}
