@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { UserContext } from "../../context/UserContext";
 import { IPhotos } from "../../interfaces/IPhoto";
 
 const Photos: React.FC = () => {
@@ -7,6 +8,15 @@ const Photos: React.FC = () => {
   const goBack = () => {
     navigate(-1);
   };
+
+  const [photos, setPhotos] = useState<IPhotos[]>([] as IPhotos[]);
+  const { user } = useContext(UserContext);
+  const id = useParams();
+  useEffect(() => {
+    fetch(`${process.env.REACT_APP_API}/photos?userId=${id}`)
+      .then((res) => res.json())
+      .then((data) => setPhotos(data));
+  }, []);
 
   return (
     <>
@@ -16,7 +26,11 @@ const Photos: React.FC = () => {
       >
         Back
       </button>
-      <div className="grid grid-cols-3 gap-3">{/* photos are missing? */}</div>
+      <div className="grid grid-cols-3 gap-3">
+        {photos.map(el => 
+            <img src={el.url} alt={el.title} />
+        )}
+      </div>
     </>
   );
 };

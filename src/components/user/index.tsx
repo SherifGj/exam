@@ -19,7 +19,7 @@ const React: React.FC = () => {
     <UserProvider user={user}>
       <div className="h-72">
         {/* this should be gradient, not gray */}
-        <span className="absolute left-0 top-0 bg-gray-300 h-48 w-full border-b-2 border-purple-400" />
+        <span className="absolute left-0 top-0 bg-gradient-to-t from-[#e9d6ff] to-[#dce9ff] h-48 w-full border-b-2 border-purple-400" />
       </div>
       <div className="grid grid-cols-3 px-28">
         <div className="pt-10 col-span-1 pr-32">

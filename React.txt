@@ -1,0 +1,11 @@
+Declarative - means you do not need to tell what to do step by step 
+Library or framework?
+Library for building reusable UI components
+Component-based
+Main objective - developing UI with improved speed
+It uses virtual DOM(Javascript Object) - which improves the performace of the app.
+Virtual DOM is faster than regular DOM
+Both client and server-side
+JSX - Javascript XML
+Not necessary to use but recommended
+
