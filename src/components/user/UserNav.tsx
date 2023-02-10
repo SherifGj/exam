@@ -1,7 +1,8 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
 const UserNav: React.FC = () => {
   //just the hrefs are missing here.. nothing to worry about
+
   const defaultClass =
     "p-4 text-gray-500 font-semibold block transition-colors";
   const activeClass = "p-4 text-blue-700 font-semibold block transition-colors";
@@ -21,7 +22,7 @@ const UserNav: React.FC = () => {
         </li>
         <li>
           <NavLink
-            to={""}
+            to={"albums"}
             className={({ isActive }) =>
               isActive ? activeClass : defaultClass
             }
@@ -31,13 +32,14 @@ const UserNav: React.FC = () => {
         </li>
         <li>
           <NavLink
-            to={""}
+            to={"todos"}
             className={({ isActive }) =>
               isActive ? activeClass : defaultClass
             }
           >
             Todos
           </NavLink>
+     
         </li>
       </ul>
     </div>

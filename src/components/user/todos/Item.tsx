@@ -2,7 +2,8 @@ import { useState } from "react";
 import { ITodo } from "../../../interfaces/ITodo";
 
 const Item: React.FC<ITodo> = ({ completed, title }) => {
-  //Use onChange to mark your to-dos as done.
+  //Use onChange to mark your to-dos as done
+  
   return (
     <li className="py-2  border-b">
       <div className={`flex align-middle flex-row justify-between`}>
