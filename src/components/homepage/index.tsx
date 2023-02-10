@@ -5,13 +5,13 @@ import UserCard from "./UserCard";
 const HomePage: React.FC = () => {
   const [users, setUsers] = useState<IUser[]>([] as IUser[]);
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API}/users`)
+    fetch(`https://jsonplaceholder.typicode.com/users`)
       .then((res) => res.json())
       .then((data) => setUsers(data));
   }, []);
   return (
     //make it look same as Homepage.png
-    <div className=" p-5 pt-32">
+    <div className=" p-5 pt-32 grid grid-cols-4 gap-x-8 ">
       {users.map((el) => (
         <UserCard key={el.id} {...el} />
       ))}

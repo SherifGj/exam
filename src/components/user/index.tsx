@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, Outlet, Link } from "react-router-dom";
 import { UserProvider } from "../../context/UserContext";
 import { IUser } from "../../interfaces/IUser";
+import Details from "./Details";
 import UserNav from "./UserNav";
 
 const React: React.FC = () => {
@@ -17,11 +18,12 @@ const React: React.FC = () => {
   }, [id]);
   return (
     <UserProvider user={user}>
-      <div className="h-72">
+      <div className="h-72 " >
         {/* this should be gradient, not gray */}
-        <span className="absolute left-0 top-0 bg-gray-300 h-48 w-full border-b-2 border-purple-400" />
+        <span className="absolute left-0 top-0 bg-gradient-to-r from-purple-400 via-cyan-900 to-blue-500 h-48 w-full border-b-2 border-purple-400" />
       </div>
-      <div className="grid grid-cols-3 px-28">
+      <div className="flex ">
+      <div className="grid grid-cols-3  px-8">
         <div className="pt-10 col-span-1 pr-32">
           <div className="justify-center">
             <div className="relative -mt-48">
@@ -37,13 +39,25 @@ const React: React.FC = () => {
               </div>
             </div>
           </div>
+          
           <UserNav />
+          
+        
         </div>
         <div className="col-span-2">
           <Outlet />
         </div>
+        
       </div>
+      <div >
+    
+ 
+ 
+  </div>
+  
+  </div>
     </UserProvider>
+    
   );
 };
 

@@ -10,7 +10,7 @@ const UserNav: React.FC = () => {
       <ul>
         <li>
           <NavLink
-            to={""}
+            to={"/user/:id"}
             end
             className={({ isActive }) =>
               isActive ? activeClass : defaultClass
@@ -21,7 +21,7 @@ const UserNav: React.FC = () => {
         </li>
         <li>
           <NavLink
-            to={""}
+            to={"/user/:id/albums"}
             className={({ isActive }) =>
               isActive ? activeClass : defaultClass
             }
@@ -31,7 +31,7 @@ const UserNav: React.FC = () => {
         </li>
         <li>
           <NavLink
-            to={""}
+            to={"/user/:id/todos"}
             className={({ isActive }) =>
               isActive ? activeClass : defaultClass
             }
