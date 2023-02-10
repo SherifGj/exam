@@ -5,9 +5,9 @@ const UserCard: React.FC<IUser> = ({ name, username, id }) => {
   return (
     //this card needs some styling... don't you think?
     <Link to={`/user/${id}`}>
-      <div className="border mb-2">
-        <p className="font-bold group-hover:text-blue-500">{username}</p>
-        <p className="text-gray-600 font-light  group-hover:text-blue-500">
+      <div className="border mb-2 w-72 h-40 hover:bg-blue-300 hover:text-blue-700 p-4 rounded-md">
+        <p className="font-bold">{username}</p>
+        <p className="font-light">
           {name}
         </p>
       </div>

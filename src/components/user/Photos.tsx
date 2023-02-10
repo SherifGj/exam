@@ -7,6 +7,12 @@ const Photos: React.FC = () => {
   const goBack = () => {
     navigate(-1);
   };
+  const [photos, setPhotos] = useState<IPhotos[]>([] as IPhotos[]);
+  useEffect(() => {
+    fetch(`${process.env.REACT_APP_API}/photos`)
+      .then((res) => res.json())
+      .then((data) => setPhotos(data));
+  }, []);
 
   return (
     <>
@@ -16,7 +22,16 @@ const Photos: React.FC = () => {
       >
         Back
       </button>
-      <div className="grid grid-cols-3 gap-3">{/* photos are missing? */}</div>
+        <div className="grid grid-cols-3 gap-1">
+      {photos.map((el)=>(
+          <div className="w-52 h-36 mb-2 mr-2 border border-gray-300">
+            <img
+            src={el.url}
+            alt=""/>
+            <p className="opacity-0 -mt-20 bg-transparent w-full h-12 z-30 hover:bg-gray-800 overflow-hidden hover:opacity-100">{el.title}</p>
+          </div>
+      ))}
+        </div>
     </>
   );
 };

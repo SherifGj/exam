@@ -8,7 +8,7 @@ const Item: React.FC<ITodo> = ({ completed, title }) => {
       <div className={`flex align-middle flex-row justify-between`}>
         <p className={` text-lg text-black`}>{title}</p>
         <div className="p-2">
-          <input type="checkbox" value="true" />
+          <input type="checkbox" value="true"/>
         </div>
       </div>
     </li>

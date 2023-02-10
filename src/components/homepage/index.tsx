@@ -11,11 +11,11 @@ const HomePage: React.FC = () => {
   }, []);
   return (
     //make it look same as Homepage.png
-    <div className=" p-5 pt-32">
+    <div className="p-5 pt-32 gap-4 grid grid-cols-5">
       {users.map((el) => (
         <UserCard key={el.id} {...el} />
       ))}
-    </div>
+    </div> 
   );
 };
 
