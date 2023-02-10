@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams, Outlet, Link } from "react-router-dom";
 import { UserProvider } from "../../context/UserContext";
 import { IUser } from "../../interfaces/IUser";
+import Details from "./Details";
+import Todos from "./todos";
 import UserNav from "./UserNav";
 
 const React: React.FC = () => {
@@ -40,7 +42,10 @@ const React: React.FC = () => {
           <UserNav />
         </div>
         <div className="col-span-2">
+      
           <Outlet />
+            <Details user={user}></Details>
+            
         </div>
       </div>
     </UserProvider>

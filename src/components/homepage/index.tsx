@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import Layout from "../../containers/Layouts";
 import { IUser } from "../../interfaces/IUser";
 import UserCard from "./UserCard";
 
@@ -11,11 +13,15 @@ const HomePage: React.FC = () => {
   }, []);
   return (
     //make it look same as Homepage.png
-    <div className=" p-5 pt-32">
-      {users.map((el) => (
-        <UserCard key={el.id} {...el} />
+    <Layout>
+    <div className="container mx-auto grid pt-28 grid-cols-5 gap-4 ">
+        {users.map((el) => (
+        <Link to={`/users/${el.id}`}>
+            <UserCard key={el.id} {...el} />
+        </Link>
       ))}
-    </div>
+      </div>
+      </Layout>
   );
 };
 
