@@ -11,7 +11,7 @@ const HomePage: React.FC = () => {
   }, []);
   return (
     //make it look same as Homepage.png
-    <div className=" p-5 pt-32">
+    <div className=" p-5 pt-32 grid grid-cols-5 grid-rows-2 gap-5 ">
       {users.map((el) => (
         <UserCard key={el.id} {...el} />
       ))}
