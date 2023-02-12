@@ -1,77 +1,38 @@
-# Welcome to the exam!
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Introduction
+## Getting Started
 
-This exam requires you to build a web application using ReactJS, TypeScript, and TailwindCSS. The goal of the application is to display a list of users in cards and provide the ability to view more details about each user. This includes user details, albums and to-do list.
+First, run the development server:
 
-The application will start by displaying a list of users in cards. When a user card is clicked, a page with a navigation bar will be rendered that contains links to view the user's details, albums, and to-do list. The user details section will display information about the user, including their name, email, and other relevant information. The albums section will display a list of albums associated with the user, and you can click on each album to view more photos. The to-do section will display a simple list of to-do items, indicating whether they have been completed or not.
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+```
 
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Endpoints
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-In this exam, you will be working with the following endpoints:
-- https://jsonplaceholder.typicode.com/users
-- https://jsonplaceholder.typicode.com/albums
-- https://jsonplaceholder.typicode.com/photos
-- https://jsonplaceholder.typicode.com/todos
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-Note that some endpoints can be filtered based on userId or albumId. This is because each photo belongs to an album and each album belongs to a user. For example, you can retrieve the photos of a specific user by calling the /photos endpoint with albumId=number as a query parameter.
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-Think about how you can use this feature to retrieve the data you need for your application. Hints will be provided through comments in the code to help you along the way.
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
+## Learn More
 
-## Interfaces
+To learn more about Next.js, take a look at the following resources:
 
-Interfaces are provided and must be used in your implementation.
-You can find them in ***interfaces*** folder
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Context
+## Deploy on Vercel
 
-There will be a UserContext - useContext hook, that will contain user data. The UserContext will be used to share data between components.
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-## Usage
-
-To run the application, after unzipping the folder run the following commands:
-**npm install**
-#
-**npm start**
-
-The application should now be running on http://localhost:3000.
-
-## Evaluation
-
-The following aspects will be evaluated in your implementation:
-
-- Code quality and maintainability.
-- Correct usage of ReactJS, TypeScript, and TailwindCSS.
-- Correct implementation of the interfaces and components.
-- User experience and overall design of the application, including usability and accessibility.
-- Proper error handling and validation.
-
-Remember to focus on writing clean, well-structured, and maintainable code.
-
-## Project Structure
-
-The project contains a demo folder that contains screenshots of how the application will look like. Feel free to use your imagination and creativity to add more features and improve the overall user experience. The codebase contains comments as hints to help you understand the tasks and requirements.
-
-## Submission
-
-Once you have completed the exam, you should delete the node_modules folder and zip the entire project. Upload the zipped project to Moodle.
-Best of luck!
-
-## Images of application
-
-*Note: You can find these images inside demo folder in root*
-
-#### Homepage
-![Homepage](./demo/Homepage.png)
-#### User
-![User](./demo//User.png)
-#### Album
-![Album](./demo//Albums.png)
-#### Photos
-![Photos](./demo//Photos.png)
-#### Todo
-![Todo](./demo//Todos.png)
-
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
